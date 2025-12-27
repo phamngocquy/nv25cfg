@@ -45,7 +45,7 @@ return {
     lazy = false,
     init = function()
       vim.g.pydocstring_formatter = "google"
-      vim.g.pydocstring_doq_path = "~/.local/bin/doq"
+      vim.g.pydocstring_doq_path = "/Library/Frameworks/Python.framework/Versions/3.12/bin/doq"
     end,
   },
   {
@@ -92,10 +92,10 @@ return {
     config = true,
     cmd = "Glow",
   },
-  {
-    "github/copilot.vim",
-    lazy = false,
-  },
+  -- {
+  --   "github/copilot.vim",
+  --   lazy = false,
+  -- },
   {
     "tris203/precognition.nvim",
     lazy = false,
@@ -130,6 +130,11 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
     lazy = false, -- This plugin is already lazy
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+    },
   },
   {
     "rachartier/tiny-inline-diagnostic.nvim",
@@ -356,6 +361,18 @@ return {
           file_types = { "markdown", "Avante" },
         },
         ft = { "markdown", "Avante" },
+      },
+    },
+    {
+      "kawre/leetcode.nvim",
+      build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
+      dependencies = {
+        -- include a picker of your choice, see picker section for more details
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+      },
+      opts = {
+        -- configuration goes here
       },
     },
   },
