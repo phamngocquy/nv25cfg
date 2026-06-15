@@ -3,7 +3,7 @@ dofile(vim.g.base46_cache .. "nvimtree")
 return {
   filters = {
     dotfiles = false,
-    custom = { ".venv", ".git" },
+    custom = { ".venv", ".git$" },
   },
   disable_netrw = true,
   hijack_cursor = true,
